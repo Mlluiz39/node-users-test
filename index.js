@@ -8,7 +8,7 @@ const app = express()
 const User = require('./models/User')
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({ origin: true }))
 
 /*
 - Query params => ?nome=valor&idade=valor  => req.query (objeto) Filtros de busca
@@ -78,6 +78,4 @@ app.delete('/users/:id', (req, res) => {
   return res.json({ message: 'Usuário Deletado!' })
 })
 
-app.listen(port, () =>
-  console.log(`🚀 Server started in port:${port}`)
-)
+app.listen(port, () => console.log(`🚀 Server started in port:${port}`))
