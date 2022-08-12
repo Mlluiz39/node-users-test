@@ -2,7 +2,7 @@ const express = require('express')
 const { randomUUID } = require('crypto')
 const cors = require('cors')
 
-const port = process.env.PORT || 443
+const port = process.env.PORT || 3000
 const app = express()
 
 const User = require('./models/User')
